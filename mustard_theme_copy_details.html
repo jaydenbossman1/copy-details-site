@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #d4af37, #ffdb58); /* Mustard color theme */
+            color: #3e3e3e;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .details-container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .details-row:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .details-row span {
+            font-size: 1.2em;
+        }
+        .copy-btn {
+            padding: 8px 15px;
+            background-color: #ffffff;
+            color: #d4af37;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #d4af37;
+            color: white;
+            transform: scale(1.05);
+        }
+        .bishop-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`Copied: "${text}" to clipboard!`);
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Lighthouse Chapel International</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Dag_Heward-Mills_preaching.jpg/800px-Dag_Heward-Mills_preaching.jpg" alt="Bishop Dag Heward-Mills" class="bishop-image">
+    <div class="details-container">
+        <div class="details-row">
+            <span>Account Number: 53234436</span>
+            <button class="copy-btn" onclick="copyToClipboard('53234436')">Copy</button>
+        </div>
+        <div class="details-row">
+            <span>Sort Code: 20-58-51</span>
+            <button class="copy-btn" onclick="copyToClipboard('20-58-51')">Copy</button>
+        </div>
+        <div class="details-row">
+            <span>Reference: MSCILF</span>
+            <button class="copy-btn" onclick="copyToClipboard('MSCILF')">Copy</button>
+        </div>
+    </div>
+</body>
+</html>
